@@ -1,0 +1,6 @@
+.scroller .el-scrollbar__wrap {
+    overflow-x: hidden;
+}
+.scroller .el-scrollbar__wrap .el-scrollbar__view{
+    width: 800px;
+}

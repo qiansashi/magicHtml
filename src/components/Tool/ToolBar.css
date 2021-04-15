@@ -1,3 +1,10 @@
-.scroller .el-scrollbar__wrap .el-scrollbar__view{
+.el-scroller .el-scrollbar__wrap .el-scrollbar__view{
     width: 100%;
+}
+.el-scroller .el-scrollbar__wrap {
+    overflow-x: hidden;
+}
+.el-tabs__content{
+    display: flex;
+    flex-direction: column;
 }

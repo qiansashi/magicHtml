@@ -161,8 +161,10 @@ export function addNavModel (id) {
   }
   return navModel
 }
-export function addLabelModel (label) {
+export function addLabelModel (label, text = '', style = '') {
   labelModel.label = label
+  labelModel.text = text
+  labelModel.style = style
   console.log(labelModel)
   return (labelModel)
 }

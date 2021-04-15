@@ -79,19 +79,19 @@ export default {
       const index = children.findIndex(childrenArray => childrenArray.id === data.id)
       children.splice(index, 1)
       this.$store.commit('mutationsJs2Html', this.$store.state.nodeData)
-      this.showDelete -= 1
+      var id = increaseNodeId(this.nodeData, this.nodeData[0].id)
+      this.showDelete = id - 1
     },
     addNode (node, data) {
       var _this = this
       if (!_this.selected) {
         _this.$refs.tree.setCheckedKeys([data.id])
         _this.$notify({
-          title: '节点选中',
-          message: data.label + ' class:' + data.labelClass + '被选中',
+          title: '节点修改',
+          message: data.label + ' class:' + data.labelClass + '被修改~',
           duration: 2000,
           position: 'bottom-left'
         })
-        this.showDelete++
         // if (!data.children) {
         //   this.$set(data, 'children', [])
         // }
@@ -113,7 +113,7 @@ export default {
         let style = _this.newNode.style
         let labelClass = _this.newNode.labelClass
         // let children = _this.newNode.children
-
+        this.showDelete = id
         const newChild = {
           id: id++,
           label: label,
@@ -179,5 +179,10 @@ export default {
 }
 .el-icon-price-tag{
   font-size: 10px;
+}
+.label-class{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 </style>

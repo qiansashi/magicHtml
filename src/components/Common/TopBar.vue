@@ -28,10 +28,10 @@ export default {
   name: 'TopBar',
   data () {
     return {
-      style: ''
+      style: '',
       // style: 'background: -webkit-linear-gradient(left, #000000, #A8A7A3); /* Safari 5.1 - 6.0 */ background: -o-linear-gradient(right, #000000, #A8A7A3); /* Opera 11.1 - 12.0 */ background: -moz-linear-gradient(right, #000000, #A8A7A3); /* Firefox 3.6 - 15 */ background: linear-gradient(to right, #000000, #A8A7A3); /* 标准的语法（必须放在最后） */',
-      // logoFrontSrc: require('@/assets/img/magic_white.png'),
-      // logoRearSrc: require('@/assets/img/html_black.png')
+      logoFrontSrc: require('@/assets/img/magic_white.png'),
+      logoRearSrc: require('@/assets/img/html_black.png')
 
     }
   },

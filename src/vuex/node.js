@@ -48,6 +48,7 @@ export function pushChildren (nodeArray, data, _this) {
       // _this.$store.commit('mutationsSelectedNode', node)
       _this.$store.commit('mutationsSelectedData', data)
       if (nodeValue.children && nodeValue.children.length >= 0) {
+        console.log(data)
         pushChildren(nodeValue.children, data, _this)
       }
     }

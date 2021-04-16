@@ -50,6 +50,6 @@ export default {
 }
 .left-area{
   width:9%;
-  height: 1080px;
+  height: 800px;
 }
 </style>

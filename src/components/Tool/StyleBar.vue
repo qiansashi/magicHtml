@@ -22,7 +22,7 @@ export default {
 .vue-container{
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
   width: 11%;
-  height: 1080px;
+  height: 800px;
   border-style: groove;
   border-color: grey;
 }

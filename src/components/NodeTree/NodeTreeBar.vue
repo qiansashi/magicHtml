@@ -20,7 +20,7 @@
           <span class="node-tree" slot-scope="{ node, data }">
             <i class="el-icon-price-tag"></i>
             <span class="node-tag">{{node.label}}</span>
-            <span class="label-class">class:{{data.labelClass}}</span>
+            <span class="label-class">{{data.labelClass}}</span>
             <el-button class="node-add-btn"
             type="text"
             size="mini"
@@ -148,13 +148,13 @@ export default {
 <style scoped>
 .vue-container{
   box-shadow: 0 0px 2px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-  height: 820px;
+  height: 590px;
   border-style: groove;
   border-color: grey;
 }
 .node-tree-wrapper{
   box-shadow: 0 0px 0px 2px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-  height: 95%;
+  height: 92%;
   margin-top: 3px;
 }
 .scroller .el-scrollbar__wrap {
@@ -180,9 +180,14 @@ export default {
 .el-icon-price-tag{
   font-size: 10px;
 }
+.node-tag{
+  color:#409EFF;
+}
 .label-class{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-size:10px;
+
 }
 </style>

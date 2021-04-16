@@ -48,7 +48,7 @@
 
         </el-tab-pane>
         <el-tab-pane class="bootstrap-css" label="Bootstrap布局" name="bootstrapCss">
-          <el-button class="com-btn" type="text" @click="comClick">com</el-button>
+          <el-button class="com-btn" type="text" @click="comClick">模板1</el-button>
         </el-tab-pane>
       </el-tabs>
     </el-scrollbar>
@@ -75,21 +75,45 @@ export default {
     },
     divClick () {
       this.$store.commit('mutationsNewNode', addLabelModel('div'))
+      this.$message({
+        message: '选中div标签',
+        type: 'success'
+      })
     },
     handleCommand (command) {
       this.$store.commit('mutationsNewNode', addLabelModel(command, '【HTML 标题】我是一个粉刷匠'))
+      this.$message({
+        message: '选中' + command + '标签',
+        type: 'success'
+      })
     },
     pClick () {
       this.$store.commit('mutationsNewNode', addLabelModel('p', '【HTML 段落】粉刷本领强~'))
+      this.$message({
+        message: '选中p标签',
+        type: 'success'
+      })
     },
     btnClick () {
-      this.$store.commit('mutationsNewNode', addLabelModel('button', '这是一个button', ' border-radius: 30px;border-width: 1.8px;border-color: #409EFF;color: #409EFF;'))
+      this.$store.commit('mutationsNewNode', addLabelModel('button', '这是一个button', ' border-radius: 30px;border-width: 1.8px;border-color: #409EFF;color: #409EFF;background: none;'))
+      this.$message({
+        message: '选中button标签',
+        type: 'success'
+      })
     },
     navClick () {
       this.$store.commit('mutationsNewNode', addNavModel(increaseNodeId(this.$store.state.nodeData, this.$store.state.selectedData.id)))
+      this.$message({
+        message: '选中nav标签',
+        type: 'success'
+      })
     },
     comClick () {
       this.$store.commit('mutationsNewNode', addComponentModel(increaseNodeId(this.$store.state.nodeData, this.$store.state.selectedData.id)))
+      this.$message({
+        message: '选中模板',
+        type: 'success'
+      })
     }
   },
   computed: {}
@@ -99,7 +123,7 @@ export default {
 <style scoped>
 .vue-container{
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-  height: 260px;
+  height: 210px;
   border-style: groove;
   border-color: grey;
 }
@@ -129,9 +153,9 @@ export default {
   padding: 12px 20px;
 }
 .div-btn,.h-dropdown,.p-btn,.btn-btn,.nav-btn{
-  width: 58px;
+  width: 10px;
 }
 .btn-wrapper{
-  width: 160px;
+  width: 32px;
 }
 </style>

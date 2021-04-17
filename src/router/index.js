@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// import LoginDashboard from '@/components/LoginDashboard'
 
 const dashboardPage = () => import('@/components/DashboardPage')
 const toolBar = () => import('@/components/Tool/ToolBar')
 const topBar = () => import('@/components/Common/TopBar')
+const LoginDashboard = () => import('@/components/LoginDashboard')
 
 Vue.use(Router)
 
@@ -24,13 +25,15 @@ export default new Router({
           path: 'toolBar',
           name: 'toolBar',
           component: toolBar
-        },
-        {
-          path: 'helloworld',
-          name: 'helloworld',
-          component: HelloWorld
         }
       ]
+    }, {
+      path: '/login',
+      name: 'login',
+      component: LoginDashboard
+    }, {
+      path: '*',
+      redirect: '/login'
     }
   ]
 })

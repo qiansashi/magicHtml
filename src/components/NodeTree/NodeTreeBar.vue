@@ -84,54 +84,61 @@ export default {
     },
     addNode (node, data) {
       var _this = this
-      if (!_this.selected) {
-        _this.$refs.tree.setCheckedKeys([data.id])
-        _this.$notify({
-          title: '节点修改',
-          message: data.label + ' class:' + data.labelClass + '被修改~',
-          duration: 2000,
-          position: 'bottom-left'
-        })
-        // if (!data.children) {
-        //   this.$set(data, 'children', [])
-        // }
-        console.log(data)
-        console.log(node.parent)
-        // if (node.parent.data.children === []) {
-        //   _this.newNode.id = node.parent.id++
-        // } else {
-        //   console.log(node.parent.id)
-        //   _this.newNode.id = data.id++
-        // }
-        console.log(_this.newNode.id)
-        // let tempNode = _this.newNode
-        console.log(_this.nodeData[0].id)
-        let id = increaseNodeId(_this.nodeData, _this.nodeData[0].id)
-        console.log(id)
-        let label = _this.newNode.label
-        let text = _this.newNode.text
-        let style = _this.newNode.style
-        let labelClass = _this.newNode.labelClass
-        // let children = _this.newNode.children
-        this.showDelete = id
-        const newChild = {
-          id: id++,
-          label: label,
-          text: text,
-          style: style,
-          labelClass: labelClass,
-          children: []
-        }
-
-        data.children.push(newChild)
-        // data.text = 'hhhhhh'
-        _this.$store.commit('mutationsAddDiv', this.$store.state.nodeData)
-        _this.$store.commit('mutationsJs2Html', this.$store.state.nodeData)
-        // _this.$store.commit('mutationsSelectedNode', node)
-        _this.$store.commit('mutationsSelectedData', data)
-        pushChildren(_this.newNode.children, data, _this)
+      if (_this.$store.state.styleStatus) {
+        let newStyle = _this.$store.state.newStyleNode
+        data.labelClass = newStyle.labelClass
+        data.style = newStyle.style
+        data.text = newStyle.text
       } else {
+        if (!_this.selected) {
+          _this.$refs.tree.setCheckedKeys([data.id])
+          _this.$notify({
+            title: '节点修改',
+            message: data.label + ' class:' + data.labelClass + '被修改~',
+            duration: 2000,
+            position: 'bottom-left'
+          })
+          // if (!data.children) {
+          //   this.$set(data, 'children', [])
+          // }
+          console.log(data)
+          console.log(node.parent)
+          // if (node.parent.data.children === []) {
+          //   _this.newNode.id = node.parent.id++
+          // } else {
+          //   console.log(node.parent.id)
+          //   _this.newNode.id = data.id++
+          // }
+          console.log(_this.newNode.id)
+          // let tempNode = _this.newNode
+          console.log(_this.nodeData[0].id)
+          let id = increaseNodeId(_this.nodeData, _this.nodeData[0].id)
+          console.log(id)
+          let label = _this.newNode.label
+          let text = _this.newNode.text
+          let style = _this.newNode.style
+          let labelClass = _this.newNode.labelClass
+          // let children = _this.newNode.children
+          this.showDelete = id
+          const newChild = {
+            id: id++,
+            label: label,
+            text: text,
+            style: style,
+            labelClass: labelClass,
+            children: []
+          }
 
+          data.children.push(newChild)
+          // data.text = 'hhhhhh'
+          _this.$store.commit('mutationsAddDiv', this.$store.state.nodeData)
+          _this.$store.commit('mutationsJs2Html', this.$store.state.nodeData)
+          // _this.$store.commit('mutationsSelectedNode', node)
+          _this.$store.commit('mutationsSelectedData', data)
+          pushChildren(_this.newNode.children, data, _this)
+        } else {
+
+        }
       }
     },
     filterNode (value, data) {
@@ -147,13 +154,12 @@ export default {
 
 <style scoped>
 .vue-container{
-  box-shadow: 0 0px 2px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-  height: 590px;
+  height: 74%;
   border-style: groove;
   border-color: grey;
+  background-color: white;
 }
 .node-tree-wrapper{
-  box-shadow: 0 0px 0px 2px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
   height: 92%;
   margin-top: 3px;
 }
@@ -161,14 +167,16 @@ export default {
   overflow-x: hidden
 }
 .scroller{
-  height: 94%;
+  height: 100%;
 }
 .node-ins{
+  background-color: #409EFF;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   height: 38px;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 4px 4px;
 }
 .node-name{
+  color: white;
   line-height: 38px;
 }
 .node-delete-btn{

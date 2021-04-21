@@ -10,6 +10,9 @@
                 <el-dropdown-item icon="el-icon-share">分享</el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
+        <div class="slot">
+          <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -30,7 +33,14 @@ export default {
 <style scoped>
 .setup-icon{
     font-size: 25px;
-    padding: 15px;
+    padding: 18px;
     margin-left: 22px;
+}
+.setup-template{
+  display: flex;
+}
+.slot{
+  width: 370px;
+  line-height: 60px;
 }
 </style>

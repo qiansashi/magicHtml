@@ -13,10 +13,12 @@ import $ from 'jquery'
 import Axios from 'axios'
 import VueAxios from 'vue-axios'
 import api from '@/api/api'
+import VueClipboard from 'vue-clipboard2'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueAxios, Axios)
+Vue.use(VueClipboard)
 
 /* eslint-disable no-new */
 router.beforeEach((to, from, next) => {

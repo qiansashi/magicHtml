@@ -126,6 +126,7 @@ export default {
   height: 210px;
   border-style: groove;
   border-color: grey;
+  background-color: white;
 }
 .el-scroller{
   height: 94%;
@@ -134,11 +135,13 @@ export default {
   width: 100%;
 }
 .tool-ins{
+  background-color: #409EFF;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   height: 38px;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 4px 4px;
 }
 .tool-name{
+  color: white;
   line-height: 38px;
 }
 .basic-tool{
